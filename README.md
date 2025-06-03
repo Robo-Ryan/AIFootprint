@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChatGPT Carbon Footprint Tracker
 
-## Getting Started
+A Chrome extension that tracks your ChatGPT usage and displays your environmental impact in real-time.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 📊 **Real-time Tracking**: Monitors your message count from ChatGPT's localStorage
+- ⚡ **Energy Estimates**: Calculates energy consumption based on AI model usage
+- 🌍 **Carbon Footprint**: Shows CO₂ emissions from your ChatGPT usage
+- 💰 **Offset Costs**: Calculates the cost to offset your carbon footprint
+- 🌱 **Easy Donations**: Direct integration with Carbonfund.org for carbon offsetting
+- 🎯 **Floating Widget**: Non-intrusive overlay that floats over ChatGPT
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### From Source (Developer Mode)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Download or clone this repository
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" in the top right corner
+4. Click "Load unpacked" and select the extension folder
+5. The extension will be installed and ready to use
 
-## Learn More
+### Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Navigate to [ChatGPT](https://chatgpt.com) or [chat.openai.com](https://chat.openai.com)
+2. The carbon footprint widget will automatically appear in the top-right corner
+3. The widget shows:
+   - Your total message count
+   - Estimated energy consumption
+   - CO₂ emissions
+   - Carbon offset cost
+4. Click "Donate Carbon Offset" to contribute to environmental causes
+5. Drag the widget by its header to reposition it
+6. Click the "−" button to minimize/expand the widget
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The extension reads your message count from ChatGPT's localStorage and calculates environmental impact using these estimates:
 
-## Deploy on Vercel
+- **Energy**: ~0.003 kWh per message
+- **CO₂**: ~475g CO₂ per kWh (global average)
+- **Offset Cost**: $20 per metric ton of CO₂
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*Note: These are rough estimates. Actual impact may vary based on model efficiency, server location, and usage patterns.*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Privacy
+
+This extension:
+- ✅ Only reads message count data from localStorage
+- ✅ Does not collect or transmit any personal data
+- ✅ Works entirely locally in your browser
+- ✅ Only connects to Carbonfund.org when you choose to donate
+
+## Contributing
+
+Feel free to submit issues, feature requests, or pull requests to improve this extension.
+
+## License
+
+MIT License - feel free to use and modify as needed.
